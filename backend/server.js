@@ -13,9 +13,13 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/expense_tracker', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+mongoose.connect(process.env.MONGODB_URI)
+.then(() => {
+    console.log("✅ MongoDB Connected Successfully");
+})
+.catch((err) => {
+    console.log("❌ MongoDB Connection Error:");
+    console.log(err);
 });
 
 // Expense Schema
