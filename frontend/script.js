@@ -3,7 +3,7 @@
         
 
         // API Base URL - change this to your backend URL
-        const API_BASE = 'http://localhost:3000/api';
+       const API_BASE = '/api';
 
         // DOM Elements
         const form = document.getElementById('expenseForm');
